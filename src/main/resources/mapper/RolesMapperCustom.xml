@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.zanezz.demo.dao.RolesMapperCustom">
+  <select id="selectRoleIdByUserId" parameterType="java.lang.Integer" resultType="Integer">
+    select 
+    role_id
+    from user
+    where id = #{uid}
+  </select>
+
+  <select id="selectRolesByUsername" parameterType="java.lang.String" resultType="cn.zanezz.demo.entity.Roles">
+    select
+    *
+    from roles
+    where id = (select role_id from  user where username=#{username})
+  </select>
+</mapper>
