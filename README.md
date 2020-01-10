@@ -1,2 +1,2 @@
 # SpringBootPlusShiro
-springboot + shiro 用户权限管理
+springboot + shiro +  redis 用户权限管理
